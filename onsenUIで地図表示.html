@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+  <script src="lib/onsenui/js/angular-onsenui.min.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD9f43n5Bc82sIC9EVLtPYmEtFqPgjjRf4" type="text/javascript"></script>
+  <script src="components/map.js"></script>
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script>
+  ons.bootstrap()
+  </script>
+  
+        <script type="text/javascript">
+          function initialize() {
+            
+            var mapOptions = {
+              center: new google.maps.LatLng(35.658892, 139.755286),    //ínê}è„Ç≈ï\é¶Ç≥ÇπÇÈà‹ìxåoìx
+              zoom: 14,                                                 //ínê}ÇÃî{ó¶
+              mapTypeId: google.maps.MapTypeId.ROADMAP                  //ínê}ÇÃéÌóﬁ
+            };
+            
+            var map = new google.maps.Map(document.getElementById("map_canvas"),
+                                          mapOptions);
+          
+          $(function(){
+            $('.page__background').css('background-color', 'rgba(0,0,0,0)');
+          });
+         }
+        </script>   
+    </head>
+<body onload="initialize()">
+    <ons-page>
+        <ons-toolbar>
+            <div class="left"><ons-back-button>Back</ons-back-button></div>
+        </ons-toolbar>
+            <div style="text-align: center">
+                <!-- ínê}ÇÃï`âÊóÃàÊ -->
+                <div id="map_canvas" style="width:400px; height:500px"></div>
+            </div>
+    </ons-page>
+</body>
+</html>
